@@ -1,5 +1,5 @@
 const bcrypt = require('bcrypt');
-const User = require('./app/User');
+const _User = require('./User');
 
 const save = async (body) => {
   const hash = await bcrypt.hash(body.password, 13);
@@ -8,7 +8,7 @@ const save = async (body) => {
     email: body.email,
     password: hash,
   };
-  await User.create(user);
+  await _User.create(user);
 };
 
 module.exports = { save };

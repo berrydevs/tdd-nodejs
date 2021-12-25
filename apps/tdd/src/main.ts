@@ -11,6 +11,7 @@ const UserRoutes = require('./app/user-routes')
 sequelize.sync();
 
 const app = express();
+console.log("-> process.env.NODE_ENV", process.env.NODE_ENV);
 
 app.use(express.json());
 app.use(UserRoutes)
