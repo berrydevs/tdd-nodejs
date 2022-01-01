@@ -1,4 +1,5 @@
 import exp = require('constants');
+
 const sequelize = require('../app/config/database');
 
 const request = require('supertest');
@@ -13,15 +14,17 @@ beforeEach(() => {
   return User.destroy({ truncate: true });
 });
 
-describe('User Registration', () => {
-  const postValidator = () => {
-    return request(app).post('/api/1.0/users').send({
-      name: 'james',
-      email: 'james@berrydevs.com',
-      password: 'secret',
-    });
-  };
+const validUser = {
+  name: 'james',
+  email: 'james@berrydevs.com',
+  password: 'secret',
+};
 
+const postValidator = (user = validUser) => {
+  return request(app).post('/api/1.0/users').send(user);
+};
+
+describe('User Registration', () => {
   it('returns 200 when signup request is valid', async () => {
     const response = await postValidator();
 
@@ -54,5 +57,63 @@ describe('User Registration', () => {
     const users = await User.findAll();
     const firstUser = users[0];
     expect(firstUser.password).not.toBe('secret');
+  });
+
+  it('returns 400 when username is null', async () => {
+    const response = await postValidator({
+      name: null,
+      email: 'james@berrydevs.com',
+      password: 'secret',
+    });
+
+    expect(response.status).toBe(400);
+  });
+
+  it('returns validationErrors field in response body when validation errors occurs', async () => {
+    const response = await postValidator({
+      name: null,
+      email: 'james@berrydevs.com',
+      password: 'secret',
+    });
+
+    const body = response.body;
+
+    expect(body.validationErrors).not.toBeUndefined();
+  });
+
+  it('returns name cannot be null when name is null', async () => {
+    const response = await postValidator({
+      name: null,
+      email: 'james@berrydevs.com',
+      password: 'secret',
+    });
+
+    const body = response.body;
+
+    expect(body.validationErrors.name).toBe('Name cannot be null.');
+  });
+
+  it('returns email cannot be null when email is null', async () => {
+    const response = await postValidator({
+      name: 'James',
+      email: null,
+      password: 'secret',
+    });
+
+    const body = response.body;
+
+    expect(body.validationErrors.email).toBe('Email cannot be null.');
+  });
+
+  it('returns error for both name and email null', async () => {
+    const response = await postValidator({
+      name: null,
+      email: null,
+      password: 'secret',
+    });
+
+    const body = response.body;
+
+    expect(Object.keys(body.validationErrors)).toEqual(['name', 'email']);
   });
 });
