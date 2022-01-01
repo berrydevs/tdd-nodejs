@@ -1,5 +1,6 @@
 {
   "conventionalCommits.scopes": [
-    "Implementation"
+    "Implementation",
+    "enviornment"
   ]
 }
