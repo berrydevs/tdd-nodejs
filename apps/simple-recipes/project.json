@@ -1,0 +1,46 @@
+{
+  "root": "apps/simple-recipes",
+  "sourceRoot": "apps/simple-recipes/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/gatsby:build",
+      "options": {
+        "outputPath": "apps/simple-recipes/public",
+        "uglify": true,
+        "color": true,
+        "profile": false
+      },
+      "configurations": {
+        "production": {}
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/gatsby:server",
+      "options": {
+        "buildTarget": "simple-recipes:build"
+      },
+      "configurations": {
+        "production": {
+          "buildTarget": "simple-recipes:build:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/simple-recipes/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/simple-recipes"],
+      "options": {
+        "jestConfig": "apps/simple-recipes/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

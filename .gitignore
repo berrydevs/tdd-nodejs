@@ -37,3 +37,7 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+/apps/simple-recipes/node_modules
+/apps/simple-recipes/public
+/apps/simple-recipes/.cache

@@ -41,6 +41,11 @@
         "style": "css",
         "linter": "eslint"
       }
+    },
+    "@nrwl/gatsby": {
+      "application": {
+        "style": "styl"
+      }
     }
   }
 }

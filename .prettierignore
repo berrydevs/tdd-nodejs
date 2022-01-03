@@ -2,3 +2,7 @@
 
 /dist
 /coverage
+
+/apps/simple-recipes/node_modules
+/apps/simple-recipes/public
+/apps/simple-recipes/.cache
