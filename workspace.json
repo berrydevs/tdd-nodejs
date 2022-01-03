@@ -3,8 +3,8 @@
   "projects": {
     "ecommerce": "apps/ecommerce",
     "ecommerce-e2e": "apps/ecommerce-e2e",
-    "simple-recipes": "apps/simple-recipes",
-    "simple-recipes-e2e": "apps/simple-recipes-e2e",
+    "simply-recipes": "apps/simply-recipes",
+    "simply-recipes-e2e": "apps/simply-recipes-e2e",
     "tdd": "apps/tdd"
   }
 }

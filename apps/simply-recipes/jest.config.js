@@ -1,10 +1,10 @@
 module.exports = {
-  displayName: 'simple-recipes',
+  displayName: 'simply-recipes',
   preset: '../../jest.preset.js',
   transform: {
     '^(?!.*\\.(js|jsx|ts|tsx|css|json)$)': '@nrwl/react/plugins/jest',
     '^.+\\.[tj]sx?$': 'babel-jest',
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
-  coverageDirectory: '../../coverage/apps/simple-recipes',
+  coverageDirectory: '../../coverage/apps/simply-recipes',
 };

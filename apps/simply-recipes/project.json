@@ -1,12 +1,12 @@
 {
-  "root": "apps/simple-recipes",
-  "sourceRoot": "apps/simple-recipes/src",
+  "root": "apps/simply-recipes",
+  "sourceRoot": "apps/simply-recipes/src",
   "projectType": "application",
   "targets": {
     "build": {
       "executor": "@nrwl/gatsby:build",
       "options": {
-        "outputPath": "apps/simple-recipes/public",
+        "outputPath": "apps/simply-recipes/public",
         "uglify": true,
         "color": true,
         "profile": false
@@ -18,11 +18,11 @@
     "serve": {
       "executor": "@nrwl/gatsby:server",
       "options": {
-        "buildTarget": "simple-recipes:build"
+        "buildTarget": "simply-recipes:build"
       },
       "configurations": {
         "production": {
-          "buildTarget": "simple-recipes:build:production"
+          "buildTarget": "simply-recipes:build:production"
         }
       }
     },
@@ -30,14 +30,14 @@
       "executor": "@nrwl/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["apps/simple-recipes/**/*.{ts,tsx,js,jsx}"]
+        "lintFilePatterns": ["apps/simply-recipes/**/*.{ts,tsx,js,jsx}"]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/apps/simple-recipes"],
+      "outputs": ["coverage/apps/simply-recipes"],
       "options": {
-        "jestConfig": "apps/simple-recipes/jest.config.js",
+        "jestConfig": "apps/simply-recipes/jest.config.js",
         "passWithNoTests": true
       }
     }

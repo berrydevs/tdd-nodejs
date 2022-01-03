@@ -1,0 +1,28 @@
+{
+  "root": "apps/simply-recipes-e2e",
+  "sourceRoot": "apps/simply-recipes-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/simply-recipes-e2e/cypress.json",
+        "devServerTarget": "simply-recipes:serve"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "simply-recipes:serve:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/simply-recipes-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["simply-recipes"]
+}

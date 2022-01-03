@@ -1,10 +1,11 @@
 module.exports = {
   siteMetadata: {
-    title: `simple-recipes`,
+    title: `simply-recipes`,
     description: `This is a gatsby application created by Nx.`,
   },
   plugins: [
     'gatsby-plugin-stylus',
+
     {
       resolve: 'gatsby-plugin-svgr',
       options: {
@@ -32,7 +33,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `simple-recipes`,
+        name: `simply-recipes`,
         short_name: `starter`,
         start_url: `/`,
         background_color: `#663399`,
