@@ -5,7 +5,7 @@ module.exports = {
   },
   plugins: [
     'gatsby-plugin-stylus',
-
+    `gatsby-plugin-styled-components`,
     {
       resolve: 'gatsby-plugin-svgr',
       options: {
