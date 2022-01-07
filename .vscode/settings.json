@@ -1,6 +1,7 @@
 {
   "conventionalCommits.scopes": [
     "Implementation",
-    "enviornment"
+    "enviornment",
+    "chore"
   ]
 }

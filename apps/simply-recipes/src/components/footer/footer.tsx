@@ -5,9 +5,12 @@ export interface FooterProps {}
 
 export function Footer(props: FooterProps) {
   return (
-    <div>
-      <h1>Welcome to Footer!</h1>
-    </div>
+    <footer className='page-footer'>
+      <p>
+        &copy; {new Date().getFullYear()} <span>Simply Recipes</span>. Built by{' '}
+        <a href="www.berrydevs.com">Berrydevs</a>
+      </p>
+    </footer>
   );
 }
 

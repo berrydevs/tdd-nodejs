@@ -1,5 +1,12 @@
-import React from 'react';
+import React from 'react'
 
-const NotFoundPage = () => <h1>NOT FOUND</h1>;
+const NotFoundPage = () => {
+  <main class="error-page">
+    <section>
+      <h1>404</h1>
+      <h3>Page not found</h3>
+    </section>
+  </main>
+}
 
-export default NotFoundPage;
+export default NotFoundPage

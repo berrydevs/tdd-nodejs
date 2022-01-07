@@ -1,5 +1,9 @@
 import Footer from '../footer/footer';
 import Navbar from '../navbar/navbar';
+
+import 'normalize.css'
+import '../../assets/css/main.css'
+
 import './layout.module.styl';
 import * as layoutStyles from './layout.module.styl'
 

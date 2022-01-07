@@ -6,6 +6,8 @@
   "license": "MIT",
   "dependencies": {
     "gatsby": "*",
-    "gatsby-plugin-image": "*"
+    "gatsby-plugin-image": "*",
+    "normalize.css": "^8.0.1",
+    "react-icons": "^4.3.1"
   }
 }
